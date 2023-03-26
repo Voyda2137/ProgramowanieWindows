@@ -7,13 +7,14 @@ import java.io.IOException;
 import java.util.*;
 
 
-public class HelloApplication extends Application {
+public class Zadanie2 extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Podaj wielkosc tablicy: ");
         int size = scanner.nextInt();
         double[] arr = new double[size];
+        // nie zawarłem 2.5 poniewaz nie ma jej w liscie w tresci zadania
         List<Double> values = Arrays.asList(2.0, 3.0, 3.5, 4.0, 4.5, 5.0);
         Random rand = new Random();
         System.out.println("Wylosowana tablica:");
@@ -26,6 +27,8 @@ public class HelloApplication extends Application {
             avg += el;
         }
         avg = avg / arr.length; // wyliczenie sredniej
+        avg = Math.round(avg * 2.0) / 2.0; //zaokraglenie do .5 albo .0
+
         System.out.println("\nSrednia wartosc w tablicy: " +avg);
         double max = arr[0];
         double min = arr[0];
@@ -42,13 +45,15 @@ public class HelloApplication extends Application {
         List<Double> higher = new ArrayList<>();
         List<Double> lower = new ArrayList<>();
         for(double el: arr){
-            if(el > avg){
+            if(el > avg && !higher.contains(el)){ //sprawdzam czy element jest wiekszy od sredniej i czy nie jest juz w tablicy
                 higher.add(el);
             }
-            else if(el < avg){
+            else if(el < avg && !lower.contains(el)){
                 lower.add(el);
             }
         }
+        Collections.sort(higher);
+        Collections.sort(lower);
         System.out.println("Wartosci wieksze od sredniej: ");
         for(double el: higher){
             System.out.print(el +" ");
@@ -63,7 +68,7 @@ public class HelloApplication extends Application {
         for (int i = 0; i < arr.length; i++) {
 
             // Skipowanie wartosci jesli juz zostala znaleziona
-            if (visited[i] == true)
+            if (visited[i])
                 continue;
 
             // Obliczenie czestotliwosci
@@ -77,10 +82,6 @@ public class HelloApplication extends Application {
             System.out.println("Liczba: " + arr[i] + " Czestotliwosc: " + count);
         }
         double standardDeviation = 0.0;
-        double sum = 0.0;
-        for (double el : arr) {
-            sum += el;
-        }
         for (double el : arr) {
             standardDeviation += Math.pow(el - avg, 2);
         }

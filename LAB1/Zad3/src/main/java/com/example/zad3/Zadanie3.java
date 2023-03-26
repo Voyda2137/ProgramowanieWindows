@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class HelloApplication extends Application {
+public class Zadanie3 extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         Scanner scanner = new Scanner(System.in);

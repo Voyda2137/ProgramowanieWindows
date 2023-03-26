@@ -10,7 +10,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
-public class HelloApplication extends Application {
+public class Zadanie4 extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         Set<Integer> s1 = new HashSet<>();

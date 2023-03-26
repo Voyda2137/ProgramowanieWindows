@@ -10,10 +10,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class HelloApplication extends Application {
+public class Zadanie2 extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        List<Integer> list = new ArrayList<Integer>();
+        List<Integer> list = new ArrayList<>();
         int cntr = 0;
         int distinctVal = 0;
         Scanner scanner = new Scanner(System.in);

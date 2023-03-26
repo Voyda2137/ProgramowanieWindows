@@ -9,7 +9,7 @@ import java.util.Random;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class HelloApplication extends Application {
+public class Zadanie1 extends Application {
     @Override
     public void start(Stage stage) throws IOException {
     Random rand = new Random();

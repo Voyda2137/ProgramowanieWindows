@@ -1,12 +1,6 @@
 package com.example.zad3;
 
-import javafx.application.Application;
-import javafx.stage.Stage;
-
-import java.io.IOException;
-import java.util.Scanner;
-
-public class HelloApplication extends Application {
+public class MatrixOperations {
     public static void printArr(int[][] arr){
         // odczytanie ilosci rzedow i macierzy,
         // macierze sa kwadratowe wiec nie ma roznicy czy uzywam arr.length, czy arr[0].length,
@@ -51,7 +45,7 @@ public class HelloApplication extends Application {
         }
         return cell;
     }
-    // metoda do mnozenia macierza opierajaca sie na multiplyCell
+    // metoda do mnozenia macierzy opierajaca sie na multiplyCell
     public static int[][] multiplyArr(int[][] arr1, int[][] arr2){
         int[][] multiply = new int[arr1.length][arr1[0].length];
         for (int row = 0; row < multiply.length; row++) {
@@ -60,22 +54,5 @@ public class HelloApplication extends Application {
             }
         }
         return multiply;
-    }
-    @Override
-    public void start(Stage stage) throws IOException {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Podaj wielkosc macierzy: ");
-        int size = scanner.nextInt();
-        int matrix1[][] = new int[size][size];
-        int matrix2[][] = new int[size][size];
-        fillArr(matrix1);
-        fillArr(matrix2);
-        printArr(addArr(matrix1, matrix2));
-        printArr(subArr(matrix1, matrix2));
-        printArr(multiplyArr(matrix1, matrix2));
-    }
-
-    public static void main(String[] args) {
-        launch();
     }
 }
