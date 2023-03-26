@@ -26,6 +26,7 @@ public class Zadanie2 extends Application {
             cntr++;
             list.add(num);
             System.out.println("Ilosc unikalnych wartosci " +distinctVal);
+            System.out.println("Ilosc podanych wartosci " +cntr);
         }
     }
 
