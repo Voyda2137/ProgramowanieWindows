@@ -23,7 +23,7 @@ public class DisplayColorController {
     public void goBackHandler(ActionEvent event) throws IOException {
         Parent newViewParent = FXMLLoader.load(getClass().getResource("main-view.fxml"));
         Scene newViewScene = new Scene(newViewParent);
-        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow(); // przechodzenie między widokami
         window.setScene(newViewScene);
         window.show();
     }

@@ -25,7 +25,7 @@ public class MixColorController {
     public void goBackHandler(ActionEvent event) throws IOException {
         Parent newViewParent = FXMLLoader.load(getClass().getResource("main-view.fxml"));
         Scene newViewScene = new Scene(newViewParent);
-        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow(); // przechodzenie między widokami
         window.setScene(newViewScene);
         window.show();
     }
@@ -66,12 +66,14 @@ public class MixColorController {
                 alert.setContentText("Kolor o takiej nazwie już istnieje!");
                 alert.showAndWait();
             }
-            int newRed = (red1 + red2) / 2;
-            int newGreen = (green1 + green2) / 2;
-            int newBlue = (blue1 + blue2) / 2;
-            ColorCreator color = new ColorCreator(newRed, newGreen, newBlue);
-            ColorManager.getInstance().addColor(newName, color);
-            newColorNameArea.setText(newName);
+            else {
+                int newRed = (red1 + red2) / 2;
+                int newGreen = (green1 + green2) / 2;
+                int newBlue = (blue1 + blue2) / 2;
+                ColorCreator color = new ColorCreator(newRed, newGreen, newBlue);
+                ColorManager.getInstance().addColor(newName, color);
+                newColorNameArea.setText(newName);
+            }
         }
     }
 }

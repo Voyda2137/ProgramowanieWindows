@@ -19,7 +19,7 @@ public class MainViewController {
     public void openCreateClrView(ActionEvent event) throws IOException {
         Parent newViewParent = FXMLLoader.load(getClass().getResource("create-color-view.fxml"));
         Scene newViewScene = new Scene(newViewParent);
-        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow(); // przechodzenie między widokami
         window.setScene(newViewScene);
         window.show();
     }
@@ -27,7 +27,7 @@ public class MainViewController {
     public void openDisplayClrView(ActionEvent event) throws IOException {
         Parent newViewParent = FXMLLoader.load(getClass().getResource("display-color-view.fxml"));
         Scene newViewScene = new Scene(newViewParent);
-        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow(); // przechodzenie między widokami
         window.setScene(newViewScene);
         window.show();
     }
@@ -35,7 +35,7 @@ public class MainViewController {
     public void openMixClrView(ActionEvent event) throws IOException {
         Parent newViewParent = FXMLLoader.load(getClass().getResource("mix-color-view.fxml"));
         Scene newViewScene = new Scene(newViewParent);
-        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow(); // przechodzenie między widokami
         window.setScene(newViewScene);
         window.show();
     }
