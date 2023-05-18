@@ -30,7 +30,7 @@ public class ColorCreator {
         this.rgbValues = rgbValues;
     }
 
-    public static boolean isValidRGB(int red, int green, int blue) {
+    public static boolean isValidRGB(int red, int green, int blue) { // sprawdzam czy są to prawidłowe wartości RGB
         return red >= 0 && red <= 255 &&
                 green >= 0 && green <= 255 &&
                 blue >= 0 && blue <= 255;

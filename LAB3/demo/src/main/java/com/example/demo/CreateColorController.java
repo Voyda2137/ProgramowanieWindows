@@ -25,7 +25,7 @@ public class CreateColorController {
     public void goBackHandler(ActionEvent event) throws IOException {
         Parent newViewParent = FXMLLoader.load(getClass().getResource("main-view.fxml"));
         Scene newViewScene = new Scene(newViewParent);
-        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow(); // przechodzenie między widokami
         window.setScene(newViewScene);
         window.show();
     }
@@ -37,7 +37,7 @@ public class CreateColorController {
             int greenVal = Integer.parseInt(green.getText());
             int blueVal = Integer.parseInt(blue.getText());
             String nameVal = name.getText();
-            if (ColorManager.getInstance().colorsMap.containsKey(nameVal)) {
+            if (ColorManager.getInstance().colorsMap.containsKey(nameVal)) { // sprawdzam czy istnieje już taki kolor
                 alert.setTitle("Zduplikowany kolor");
                 alert.setHeaderText(null);
                 alert.setContentText("Kolor o takiej nazwie już istnieje!");
