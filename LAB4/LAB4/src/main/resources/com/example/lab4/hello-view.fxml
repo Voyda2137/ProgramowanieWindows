@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" prefHeight="496.0" prefWidth="540.0" spacing="20.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.lab4.HelloController">
+  <padding>
+    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+  </padding>
+   <GridPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="430.0" prefWidth="161.0">
+     <columnConstraints>
+       <ColumnConstraints hgrow="SOMETIMES" maxWidth="418.0" minWidth="10.0" prefWidth="331.0" />
+     </columnConstraints>
+     <rowConstraints>
+       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+     </rowConstraints>
+      <children>
+         <TextArea fx:id="name" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="29.0" prefWidth="162.0" GridPane.valignment="CENTER" />
+         <TextArea fx:id="surname" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="29.0" prefWidth="162.0" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+         <TextArea fx:id="email" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="29.0" prefWidth="162.0" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+         <TextArea fx:id="login" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="29.0" prefWidth="162.0" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+         <Label alignment="CENTER" contentDisplay="TOP" prefHeight="17.0" prefWidth="109.0" text="Podaj email" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP" />
+         <Label alignment="CENTER" contentDisplay="TOP" prefHeight="17.0" prefWidth="109.0" text="Podaj nazwisko" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP" />
+         <Label alignment="CENTER" contentDisplay="TOP" prefHeight="17.0" prefWidth="109.0" text="Podaj imię" GridPane.halignment="CENTER" GridPane.valignment="TOP" />
+         <Label alignment="CENTER" contentDisplay="TOP" prefHeight="17.0" prefWidth="109.0" text="Podaj login" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="TOP" />
+         <Label alignment="CENTER" contentDisplay="TOP" prefHeight="17.0" prefWidth="109.0" text="Podaj Hasło" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="TOP" />
+         <Label alignment="CENTER" contentDisplay="TOP" prefHeight="17.0" prefWidth="109.0" text="Powtórz hasło" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="TOP" />
+         <Button fx:id="submit" mnemonicParsing="false" onAction="#onHelloButtonClick" prefHeight="25.0" prefWidth="101.0" text="Zarejestruj się" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="BOTTOM" />
+         <CheckBox fx:id="showPwd" mnemonicParsing="false" text="Pokaż hasło" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="TOP" />
+         <StackPane fx:id="pane1" prefHeight="29.0" prefWidth="161.0" GridPane.rowIndex="4">
+            <children>
+               <PasswordField fx:id="pwd1" />
+               <PasswordField fx:id="pwdV1" />
+            </children>
+         </StackPane>
+         <StackPane fx:id="pane2" prefHeight="29.0" prefWidth="161.0" GridPane.rowIndex="5">
+            <children>
+               <PasswordField fx:id="pwd2" />
+               <PasswordField fx:id="pwdV2" />
+            </children>
+         </StackPane>
+      </children>
+   </GridPane>
+
+  <Label fx:id="welcomeText" />
+</VBox>
