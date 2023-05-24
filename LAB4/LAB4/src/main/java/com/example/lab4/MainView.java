@@ -1,24 +1,53 @@
 package com.example.lab4;
 
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
+import javafx.geometry.Insets;
 import javafx.scene.Scene;
+import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
-
-import java.io.IOException;
+import javafx.geometry.Pos;
+import javafx.scene.control.Button;
 
 public class MainView extends Application {
-    @Override
-    public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(MainView.class.getResource("register-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 600);
-        stage.setTitle("Hello!");
-        stage.setScene(scene);
-        stage.show();
-
-    }
-
     public static void main(String[] args) {
-        launch();
+        launch(args);
     }
+
+    @Override
+    public void start(Stage primaryStage) {
+
+        LoginForm loginForm = new LoginForm();
+        RegisterForm registerForm = new RegisterForm();
+        primaryStage.setTitle("Main View");
+        GridPane gridPane = new GridPane();
+        gridPane.setAlignment(Pos.CENTER);
+        gridPane.setPadding(new Insets(10));
+        gridPane.setVgap(10);
+        gridPane.setHgap(10);
+
+        Button loginButton = new Button("Login");
+        loginButton.setOnAction(event -> {
+            loginForm.openLoginForm();
+        });
+        gridPane.add(loginButton, 0, 0);
+
+        Button registerButton = new Button("Register");
+        registerButton.setOnAction(event -> {
+            registerForm.openRegisterForm();
+        });
+        gridPane.add(registerButton, 1, 0);
+
+        Scene scene = new Scene(gridPane, 300, 200);
+
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+
+
+
+
+
 }
+
+
+
